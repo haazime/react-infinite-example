@@ -1,0 +1,27 @@
+{
+  "name": "react-infinite-example",
+  "version": "0.0.1",
+  "description": "react infinite example",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@fand/react-infinite-scroll-container": "0.0.2",
+    "material-ui": "^0.14.4",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-tap-event-plugin": "^0.2.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --inline --content-base ."
+  },
+  "author": "haazime",
+  "license": "ISC"
+}
