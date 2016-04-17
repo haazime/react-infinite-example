@@ -4,7 +4,7 @@ import ItemGridList from './ItemGridList'
 
 const generateText = (seed) => {
   const items = []
-  for (let i = 0; i < 100; i++) { items.push(seed + i) }
+  for (let i = 0; i < 20; i++) { items.push(seed + i) }
   return items
 }
 
@@ -33,7 +33,7 @@ class ItemList extends React.Component {
     return (
       <div className="ItemListWrapper">
         <InfiniteScrollContainer
-          padding={300}
+          padding={600}
           interval={300}
           onScroll={() => this.loadNextItems()}
         >
