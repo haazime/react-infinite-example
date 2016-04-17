@@ -25,10 +25,11 @@ class ItemList extends React.Component {
   }
 
   render() {
+    const padding = window.innerHeight / 2
     return (
       <div className="ItemListWrapper">
         <InfiniteScrollContainer
-          padding={600}
+          padding={padding}
           interval={300}
           onScroll={() => this.loadNextItems()}
         >
