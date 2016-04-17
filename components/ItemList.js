@@ -25,12 +25,13 @@ class ItemList extends React.Component {
   }
 
   render() {
-    const padding = window.innerHeight / 2
+    const padding = window.innerHeight / 1.5
+    const interval = padding * 1.5
     return (
       <div className="ItemListWrapper">
         <InfiniteScrollContainer
           padding={padding}
-          interval={300}
+          interval={interval}
           onScroll={() => this.loadNextItems()}
         >
           <ItemGridList itemData={this.state.items} />
