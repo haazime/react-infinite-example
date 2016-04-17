@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardMedia, CardTitle } from 'material-ui'
 
-const Item = ({ index, width }) => (
+const ItemSummary = ({ index, width }) => (
   <Card style={{width: width}}>
     <CardMedia>
       <img src="/images/photo1.jpg" width={width} />
@@ -10,4 +10,4 @@ const Item = ({ index, width }) => (
   </Card>
 )
 
-export default Item
+export default ItemSummary

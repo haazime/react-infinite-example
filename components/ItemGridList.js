@@ -1,5 +1,5 @@
 import React from 'react'
-import ListItem from './ListItem'
+import ItemSummary from './ItemSummary'
 
 const style = {
   display: 'flex',
@@ -7,15 +7,15 @@ const style = {
   justfyContent: 'space-around'
 }
 
-const renderItems = (data, width) => (
+const renderSummaries = (data, width) => (
   data.map(i => (
-    <ListItem key={i} index={i} width={width} />)
+    <ItemSummary key={i} index={i} width={width} />)
   )
 )
 
 const ItemGridList = ({ itemData }) => {
   const componentWidth = window.innerWidth / 2
-  const components = renderItems(itemData, componentWidth)
+  const components = renderSummaries(itemData, componentWidth)
   return <div style={style}>{components}</div>
 }
 
