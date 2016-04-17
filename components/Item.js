@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, CardTitle } from 'material-ui'
 
-const Item = ({ key, index }) => (
-  <Card key={key}>
+const Item = ({ index, width }) => (
+  <Card style={{width: width}}>
     <CardTitle title={`#${index}`} subtitle={`Subtitle - ${index}`} />
   </Card>
 )

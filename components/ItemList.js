@@ -30,14 +30,17 @@ class ItemList extends React.Component {
   }
 
   render() {
+    const itemWidth = window.innerWidth / 2
     return (
-      <div className="ItemList">
+      <div className="ItemListWrapper">
         <InfiniteScrollContainer
           padding={100}
           interval={200}
           onScroll={() => this.loadNextItems()}
         >
-          {this.state.items.map(i => <Item key={i} index={i} />)}
+          <div style={{display: 'flex', flexWrap: 'wrap', justfyContent: 'space-around'}}>
+            {this.state.items.map(i => <Item key={i} index={i} width={itemWidth} />)}
+          </div>
         </InfiniteScrollContainer>
       </div>
     )
