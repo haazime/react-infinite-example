@@ -1,12 +1,7 @@
 import React from 'react'
 import InfiniteScrollContainer from '@fand/react-infinite-scroll-container'
 import ItemGridList from './ItemGridList'
-
-const generateText = (seed) => {
-  const items = []
-  for (let i = 0; i < 20; i++) { items.push(seed + i) }
-  return items
-}
+import loadItem from '../actions/item-loader'
 
 class ItemList extends React.Component {
   constructor() {
@@ -22,7 +17,7 @@ class ItemList extends React.Component {
   }
 
   loadNextItems() {
-    const items = generateText(this.state.pos)
+    const items = loadItem(this.state.pos)
     this.setState({
       items: this.state.items.concat(items),
       pos: this.state.pos + items.length
