@@ -1,10 +1,10 @@
 import React from 'react'
 import InfiniteScrollContainer from '@fand/react-infinite-scroll-container'
-import Item from './Item'
+import ItemGridList from './ItemGridList'
 
 const generateText = (seed) => {
   const items = []
-  for (let i = 0; i < 50; i++) { items.push(seed + i) }
+  for (let i = 0; i < 100; i++) { items.push(seed + i) }
   return items
 }
 
@@ -30,17 +30,14 @@ class ItemList extends React.Component {
   }
 
   render() {
-    const itemWidth = window.innerWidth / 2
     return (
       <div className="ItemListWrapper">
         <InfiniteScrollContainer
-          padding={100}
-          interval={200}
+          padding={300}
+          interval={300}
           onScroll={() => this.loadNextItems()}
         >
-          <div style={{display: 'flex', flexWrap: 'wrap', justfyContent: 'space-around'}}>
-            {this.state.items.map(i => <Item key={i} index={i} width={itemWidth} />)}
-          </div>
+          <ItemGridList itemData={this.state.items} />
         </InfiniteScrollContainer>
       </div>
     )
