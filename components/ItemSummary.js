@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardMedia, CardTitle } from 'material-ui'
-import { Dialog, FlatButton } from 'material-ui'
+import ItemDetailContainer from './ItemDetailContainer'
 
 class ItemSummary extends React.Component {
   constructor(props) {
@@ -20,20 +20,6 @@ class ItemSummary extends React.Component {
 
   render() {
     const { width, index } = this.props
-
-    const actions = [
-      <FlatButton label="close" primary={true} onTouchTap={this.handleClose} />
-    ]
-    const dialog = (
-      <Dialog
-        title={`Item #${index}`}
-        actions={actions}
-        modal={true}
-        open={this.state.open}
-      >
-        Detail
-      </Dialog>
-    )
     return (
       <div>
         <Card
@@ -45,7 +31,11 @@ class ItemSummary extends React.Component {
           </CardMedia>
           <CardTitle title={`#${index}`} subtitle={`Subtitle - ${index}`} />
         </Card>
-        {dialog}
+        <ItemDetailContainer
+          itemId={index}
+          closeHandler={this.handleClose}
+          isOpen={this.state.open}
+        />
       </div>
     )
   }
